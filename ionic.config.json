@@ -1,0 +1,7 @@
+{
+  "name": "sabindi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
