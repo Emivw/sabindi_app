@@ -156,7 +156,7 @@ a {
 }
 
 button {
-  border-radius: 20px;
+  border-radius: 2px;
   /* border: 3px solid black; */
   background-color: orange;
   color: #ffffff;
@@ -177,7 +177,7 @@ button:focus {
 }
 
 button.ghost {
-  background:  radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%);
+  background:  radial-gradient( #FEDB37 0%, #FDB931 12%, #9f7928 50%, #8A6E2F 60%, transparent 100%);
   border-color: #ffffff;
 }
 
