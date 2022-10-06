@@ -13,7 +13,7 @@
           <div class="container" id="container">
     <div class="form-container sign-up-container">
       <form>
-        <h1>Create Account</h1>
+        <h1 class="title">Create Account</h1>
         <span>or use your email for registration</span>
         <input type="text" placeholder="Name" />
         <input type="text" placeholder="Surname" />
@@ -25,8 +25,8 @@
 
     <div class="form-container sign-in-container">
       <form onSubmit={this.handleSubmitLogin}>
-        <h1>Sign in</h1>
-        <span>or use your account</span>
+        <img src="https://i.postimg.cc/zf4jt9sC/Sabindi-Group-Global-Logo.png" alt=""/>
+        <h1 class="title">Sign in</h1>
         <input type="email" id="signInEmail" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <button type="submit">Sign In</button>
@@ -61,7 +61,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+// import ExploreContainer from '@/components/ExploreContainer.vue';
 
 export default  defineComponent({
   name: 'Tab1Page',
@@ -100,9 +100,9 @@ document.getElementById("signIn").addEventListener("click",openSignIn());
 
 <style scoped>
 
+ 
 
 ion-row{
-  background-color:red;
   height:88.4vh;
 }
 
@@ -110,7 +110,6 @@ ion-row{
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:blue;
   height:88.4vh;
 }
 
@@ -146,6 +145,7 @@ p {
 
 span {
   font-size: 12px;
+  color:black;
 }
 
 a {
@@ -157,12 +157,12 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
+  /* border: 3px solid black; */
+  background-color: orange;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
-  padding: 12px 45px;
+  padding: 10px 30px;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
@@ -177,7 +177,7 @@ button:focus {
 }
 
 button.ghost {
-  background-color: transparent;
+  background:  radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%);
   border-color: #ffffff;
 }
 
@@ -193,11 +193,21 @@ form {
 }
 
 input {
-  background-color: #eee;
+  background-color: black;
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+  color:white;
+}
+
+img{
+position:absolute;
+width:120px;
+top:13%;
+}
+.title{
+  color:black
 }
 
 .container {
@@ -274,7 +284,7 @@ input {
 .overlay {
   background: #ff416c;
   background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, 	grey, 	black);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
