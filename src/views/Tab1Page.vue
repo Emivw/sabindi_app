@@ -34,7 +34,8 @@
       <ion-grid class="content_grid">
         <ion-row>
           <ion-col size="6" v-for="item in items" :key="item.title">
-            <ion-router-link :to="item.to">
+           
+              <ion-router-link :to="item.to">
               <ion-card>
                 <ion-card-content>
                   {{item.title}}
@@ -65,12 +66,12 @@ export default defineComponent({
         isOpen: false,
     items: [
       {
-        title: 'CRM',
+        title: 'signup',
         img: "",
         category: [
           "admin"
         ],
-        to: '/crm'
+        to: '/auth'
       },
       {
         title: 'SRM',
