@@ -11,12 +11,25 @@
               <ion-icon
     name="search"
     style="font-size: 24px; color: black"
+    expand="block" @click="setOpen(true)"
   />
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-toolbar>
     </ion-header>
+     <ion-modal :is-open="isOpen">
+      <ion-header>
+        <ion-toolbar>
+          <ion-searchbar></ion-searchbar>
+          <ion-buttons slot="end">
+            <ion-button @click="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+      </ion-content>
+    </ion-modal>
     <ion-content :fullscreen="true">
       <ion-grid class="content_grid">
         <ion-row>
@@ -36,17 +49,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/vue';
+import { defineComponent, ref } from 'vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon,
+  IonButtons, IonButton, IonModal } from '@ionic/vue';
 import { addIcons } from 'ionicons';
 import { searchCircle } from "ionicons/icons";
 // import ExploreContainer from '@/components/ExploreContainer.vue';
 
 export default defineComponent({
   name: 'Tab2Page',
-  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonIcon },
+  components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon,
+  IonButtons, IonButton, IonModal},
 
   data: () => ({
+        isOpen: false,
     items: [
       {
         title: 'CRM',
@@ -126,7 +142,12 @@ export default defineComponent({
     addIcons({
       'search': searchCircle,
     });
-  }
+  },
+  methods: {
+      setOpen(isOpen: boolean) {
+        this.isOpen = isOpen;
+      }
+    }
 });
 </script>
 <style scoped>
