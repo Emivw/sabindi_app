@@ -28,7 +28,15 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3Page.vue')
       }
     ]
+  },
+  {
+  path: '/signup',
+  component: () => import('@/views/Auth.vue'),
+  meta: {
+    public: true,
+    onlyWhenLoggedOut: true
   }
+}
 ]
 
 const router = createRouter({
